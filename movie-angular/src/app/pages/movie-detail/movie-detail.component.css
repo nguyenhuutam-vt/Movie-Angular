@@ -1,0 +1,24 @@
+img {
+  width: 100%;
+  height: auto;
+}
+h1 {
+  color: wheat;
+  font-weight: bold;
+}
+p {
+  color: wheat;
+}
+.contain {
+  overflow-x: hidden;
+}
+a {
+  background-color: #e50914;
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  background-color: #e50914;
+  color: white;
+  border: 1px solid white;
+}
