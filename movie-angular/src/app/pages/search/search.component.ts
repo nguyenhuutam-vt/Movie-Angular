@@ -11,6 +11,10 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.submitForm();
   }
+
+  totalLength: any;
+  page: number = 1;
+
   constructor(
     private service: MovieApiServiceService,
     private title: Title,
@@ -31,6 +35,9 @@ export class SearchComponent implements OnInit {
     console.log(this.searchForm.value, 'searchform#');
     this.service.getSearchMovie(this.searchForm.value).subscribe((res: any) => {
       console.log(res.results, 'search');
+      this.totalLength = res.results.length;
+      console.log(res.results.length, 'so luong');
+
       this.searchResult = res.results;
     });
   }

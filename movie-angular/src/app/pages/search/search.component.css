@@ -21,3 +21,6 @@ h5 {
   overflow-y: hidden;
   overflow-x: hidden;
 }
+.pagination-next{
+  background-color: #ffffff;
+}

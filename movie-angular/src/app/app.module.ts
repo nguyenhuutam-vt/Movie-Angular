@@ -1,3 +1,4 @@
+import { MbscModule } from '@mobiscroll/angular';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,6 +10,11 @@ import { MovieDetailComponent } from './pages/movie-detail/movie-detail.componen
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TreeViewModule } from '@progress/kendo-angular-treeview';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,11 +23,16 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     MovieDetailComponent,
   ],
   imports: [
+    MbscModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    DateInputsModule,
+    BrowserAnimationsModule,
+    TreeViewModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent],

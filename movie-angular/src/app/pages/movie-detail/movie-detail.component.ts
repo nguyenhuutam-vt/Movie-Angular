@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieApiServiceService } from 'src/app/service/movie-api-service.service';
 
@@ -21,9 +22,11 @@ export class MovieDetailComponent implements OnInit {
     this.getMovieVideo(getParamId);
     this.getMovieCast(getParamId);
   }
+
   constructor(
     private service: MovieApiServiceService,
-    private router: ActivatedRoute
+    private router: ActivatedRoute,
+    private http: HttpClient
   ) {}
 
   getMovie(id: any) {
@@ -51,4 +54,55 @@ export class MovieDetailComponent implements OnInit {
       this.getMovieCastDetail = res.cast;
     });
   }
+
+  // @ViewChild('mbscList') list: MbscListview;
+  // data = [];
+  // showMore = true;
+
+  // listviewSettings: MbscListviewOptions = {
+  //   theme: 'ios',
+  //   themeVariant: 'light',
+  //   animateAddRemove: false,
+  //   enhance: true,
+  //   swipe: false,
+  //   striped: true,
+  // };
+
+  // formSettings: MbscFormOptions = {
+  //   theme: 'ios',
+  //   themeVariant: 'light',
+  // };
+
+  // getMovies() {
+  //   const movies = this.data;
+
+  //   this.showMore = false;
+
+  //   if (this.list) {
+  //     this.list.instance.showLoading();
+  //   }
+
+  //   this.http
+  //     .jsonp(
+  //       'https://trial.mobiscroll.com/loadmore/?length=' + (movies.length + 10),
+  //       'callback'
+  //     )
+  //     .subscribe((resp: any) => {
+  //       for (let i = 0; i < resp.length; ++i) {
+  //         const item = resp[i];
+
+  //         // movies.push({
+  //         //   id: item.id,
+  //         //   title: item.title,
+  //         // });
+  //       }
+
+  //       this.showMore = true;
+  //       this.list.instance.hideLoading();
+
+  //       if (movies.length >= 100) {
+  //         this.showMore = false;
+  //       }
+  //     });
+  // }
 }

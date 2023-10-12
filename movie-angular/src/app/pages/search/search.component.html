@@ -16,7 +16,14 @@
   </form>
 
   <div class="row mt-5">
-    <div class="col-lg-4" *ngFor="let s of searchResult">
+    <div
+      class="col-lg-4"
+      *ngFor="
+        let s of searchResult
+          | paginate
+            : { itemsPerPage: 10, currentPage: page, totalItems: totalLength }
+      "
+    >
       <div class="row">
         <div class="col-lg-3 mt-4 mb-4" *ngIf="s.poster_path">
           <img
@@ -30,4 +37,5 @@
       </div>
     </div>
   </div>
+  <pagination-controls class="text-center" style="background-color: antiquewhite;" (pageChange)="page = $event"></pagination-controls>
 </div>
